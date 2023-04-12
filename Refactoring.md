@@ -9,3 +9,6 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+1. The first change I made is returning "0" earlier in case event is not provided. That makes the first case scenario for the function easier to understand and avoid running unnecessary checks.
+2. The second change is to remove the check if candidate is of type string. The hash always return as string, so makes sense to automatically parse it as a string in the only case where could be a different type: if `event.partitionKey` is provided as a different type.
+3. The third change is being explicit for the case of when `event.partitionKey` is not provided. With the previous else, the condition could be too "general" and introduce bugs for unknown cases.
