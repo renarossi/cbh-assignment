@@ -16,3 +16,21 @@ Based on the information given, break this ticket down into 2-5 individual ticke
 You will be graded on the level of detail in each ticket, the clarity of the execution plan within and between tickets, and the intelligibility of your language. You don't need to be a native English speaker, but please proof-read your work.
 
 ## Your Breakdown Here
+**Update Agents endpoint** - Refactor the `createAgent` endpoint to include the `agentId` property when creating new agents.
+1. `agentId` should be of string type.
+2. `agentId` is a mandatory parameter.
+3. `createAgent` should return an error if `agentId` is not provided.
+4. Update unit tests to include cases of `agentId` not provided and not typeof string.
+
+_estimate_: 2
+
+**Update Existing Agents in the database** - Update current Agents table to include `agentId` property for Agents.
+1. Convert existing Agent's database Id to a `agentId` property.
+2. `agentId` should be of string type.
+
+_estimate_: 2
+
+**Update getShiftsByFacility** - Refactor the `getShiftsByFacility` endpoint to include `agentId` in the Agents object in the Shifts list.
+4. Update mocked data in unit tests to include property `agentId` for Shift lists.
+
+_estimate_: 1
